@@ -11,6 +11,6 @@ public class cardSpriteClick : MonoBehaviour
     private void OnMouseDown()
     {
         
-        cardClicked.Event.Raise(!isSelected);
+        cardClicked.Event.Raise(isSelected.Value);
     }
 }

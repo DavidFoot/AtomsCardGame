@@ -1042,6 +1042,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107167336}
   m_CullTransparentMesh: 1
+--- !u!1 &1118321568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1118321569}
+  m_Layer: 0
+  m_Name: Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1118321569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118321568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.06, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1167085518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148468053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1124,6 @@ MonoBehaviour:
     _constant: {fileID: 0}
     _variable: {fileID: 11400000, guid: 803c81e257df5654689ea12b6d6f36f1, type: 2}
     _variableInstancer: {fileID: 0}
-  possibleValueCard: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
   deck3: {fileID: 11400000, guid: 52fe349145d5d1d46b956ffb65745532, type: 2}
   card: {fileID: 400869431408795971, guid: 02378cfff5d464d4f91fa362f3424f55, type: 3}
   DeckContainer: {fileID: 1148468053}
@@ -1143,6 +1173,38 @@ MonoBehaviour:
     _eventInstancer: {fileID: 0}
     _variable: {fileID: 0}
     _variableInstancer: {fileID: 0}
+--- !u!1 &1167085517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167085518}
+  m_Layer: 0
+  m_Name: Discarded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167085518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167085517}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.6, y: -0.64049697, z: -898.0946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1118321569}
+  m_Father: {fileID: 1581283680}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206726441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1534,7 @@ Transform:
   m_Children:
   - {fileID: 1148468054}
   - {fileID: 2061105273}
+  - {fileID: 1167085518}
   - {fileID: 437584540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2016,11 +2079,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e461d66eaf5ea4ea9234da259086c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 11400000, guid: 66d508993197bc646acbb7f2e3100a85, type: 2}
+  deck: {fileID: 11400000, guid: 52fe349145d5d1d46b956ffb65745532, type: 2}
+  selected: {fileID: 11400000, guid: 08ab5b357692cd4439500b0e0c7401c6, type: 2}
+  discarded: {fileID: 11400000, guid: 424cbb3e90925214eab2c7c17f43c7b1, type: 2}
+  currentDeckCount:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: 803c81e257df5654689ea12b6d6f36f1, type: 2}
+    _variableInstancer: {fileID: 0}
   currentDiscardCount:
     _usage: 2
     _value: 0
     _constant: {fileID: 0}
     _variable: {fileID: 11400000, guid: aa7bfe1d3b8315f498f57b521afc037a, type: 2}
+    _variableInstancer: {fileID: 0}
+  discardedContainer: {fileID: 1167085517}
+  handContainer: {fileID: 2061105272}
+  discardedPosition: {fileID: 1118321569}
+  onHandChange:
+    _usage: 0
+    _event: {fileID: 11400000, guid: b95f2e08d1e19cf4f94f933cde0c0c68, type: 2}
+    _eventInstancer: {fileID: 0}
+    _variable: {fileID: 0}
     _variableInstancer: {fileID: 0}
 --- !u!114 &1970243387
 MonoBehaviour:
@@ -2040,8 +2122,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1970243386}
         m_TargetAssemblyTypeName: DiscardCards, Assembly-CSharp
-        m_MethodName: UpdateCounter
-        m_Mode: 0
+        m_MethodName: ReplaceCard
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2123,14 +2205,6 @@ MonoBehaviour:
   handContainer: {fileID: 2061105272}
   initialPosition: {fileID: 1348570521}
   spaceBetweenCard: 0.5
-  onHandDisplayed:
-    _usage: 0
-    _event: {fileID: 11400000, guid: 3138b268f3134a149879e6edb37bcfea, type: 2}
-    _eventInstancer: {fileID: 0}
-    _collection: {fileID: 0}
-    _list: {fileID: 0}
-    _collectionInstancer: {fileID: 0}
-    _listInstancer: {fileID: 0}
 --- !u!114 &2061105275
 MonoBehaviour:
   m_ObjectHideFlags: 0

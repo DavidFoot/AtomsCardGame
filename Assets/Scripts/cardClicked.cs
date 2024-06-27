@@ -6,15 +6,29 @@ using UnityEngine;
 public class cardClicked : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Color selectedColor;
+    [SerializeField] ColorReference selectedColor;
+    [SerializeField] ColorReference baseColor;
     [SerializeField] GameObject sprite;
     [SerializeField] IntReference maxDiscardCard;
     [SerializeField] IntReference currentSelectedCard;
-    public void CardClicked()
+    [SerializeField] BoolReference isCardSelected;  
+    [SerializeField] GameObjectValueList selectedList;  
+
+    public void CardClicked(bool isSelected)
     {
-        if (currentSelectedCard.Value < maxDiscardCard.Value) {
-            sprite.GetComponent<SpriteRenderer>().material.color = selectedColor;
-            currentSelectedCard.Value++;
+        if (!isSelected) {
+            if (currentSelectedCard.Value < maxDiscardCard.Value)
+            {
+                sprite.GetComponent<SpriteRenderer>().material.color = selectedColor.Value;
+                currentSelectedCard.Value++;
+                isCardSelected.Value = true;
+                selectedList.Add(GetComponentInParent<CardObject>().gameObject);
+            }
+            return;
         }
+        sprite.GetComponent<SpriteRenderer>().material.color = baseColor.Value;
+        currentSelectedCard.Value--;
+        isCardSelected.Value = false;
+        selectedList.Remove(GetComponentInParent<CardObject>().gameObject);
     }
 }
