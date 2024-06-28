@@ -27,7 +27,7 @@ public class HandManager : MonoBehaviour
             deck[i].transform.position = basePosition + new Vector3(offset, 0,0) ;
             hand.Add(deck[i]);
             deck.RemoveAt(i);
-            currentDeckCount.Value--;           
+            currentDeckCount.Value--;        
         }
     }
 }

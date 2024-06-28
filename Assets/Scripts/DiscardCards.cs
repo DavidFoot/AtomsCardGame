@@ -15,6 +15,8 @@ public class DiscardCards : MonoBehaviour
 
     [SerializeField] IntReference currentDeckCount;
     [SerializeField] IntReference currentDiscardCount;
+    [SerializeField] IntReference currentSelectedCard;
+    [SerializeField] IntReference maxCardDiscard;
     [SerializeField] GameObject discardedContainer;
     [SerializeField] GameObject handContainer;
     [SerializeField] Transform discardedPosition;
@@ -44,10 +46,10 @@ public class DiscardCards : MonoBehaviour
                 deck.RemoveAt(i);
                 oldCard.isCardSelected.Value = false;
                 oldCard.inHand.Value = false;
-                currentDeckCount.Value--;
-                
+                currentDeckCount.Value--;              
             }
             currentDiscardCount.Value--;
+            currentSelectedCard.Value = 0;
             selected.Clear();
         }
         // remove selected cart from hand v 
